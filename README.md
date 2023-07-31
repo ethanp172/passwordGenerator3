@@ -18,7 +18,7 @@ Example: `ET&1^$c"c90w`
 - Example: `sJbkNxbVbaCt`  
 
 **Numbers**
-- Adds numbers into passwor
+- Adds numbers into password
 - Example: `812045802389`  
 
 **Symbols**
