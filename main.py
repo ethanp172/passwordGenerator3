@@ -38,6 +38,10 @@ def copyPaste():
     toCopy = pwd
     pyperclip.copy(pwd)
 
+def checkbox_event():
+    print("checkbox toggled, current value:", check_var.get())
+
+
 ## CODE ##
 mainTitle = CTkLabel(root, text="Password Generator 3.0", fg_color="transparent", font=('Roboto', 20))
 mainTitle.pack(pady=2.5)
@@ -46,7 +50,6 @@ passwordText = CTkLabel(root, text="Password", font=('Courier New', 25), fg_colo
 passwordText.pack(pady=5)
 
 # Buttons #
-
 passwordGenerate = CTkButton(root, text="Generate", command=generatePassword)
 passwordCopy = CTkButton(root, text="Copy", command=copyPaste)
 
@@ -54,7 +57,6 @@ passwordGenerate.pack(pady=5)
 passwordCopy.pack()
 
 # Slider #
-
 blankSpace = CTkLabel(root, text="")
 blankSpace.pack()
 
@@ -65,5 +67,35 @@ lenSlider = CTkSlider(root, from_=1, to=45, number_of_steps=45, command=lenSlide
 lenSlider.set(12)
 lenSlider.pack()
 
+# Checkboxes #
+check_var = StringVar(value="on")
+checkbox = CTkCheckBox(root, text="CTkCheckBox", command=checkbox_event, variable=check_var, onvalue="on", offvalue="off")
+checkbox.grid(row=0, column=0, padx=20, pady=20)
 
+
+## Run GUI ##
 root.mainloop()
+
+#################
+##### NOTES #####
+#################
+
+"""
+roundedVal = 12
+def generatePassword():
+    letters = string.ascii_letters 
+    digits = string.digits
+    special_chars = string.punctuation
+
+    alphabet = letters + digits + special_chars
+
+    pwd_length = roundedVal
+
+    global pwd
+
+    pwd = ''
+    for i in range(pwd_length):
+        pwd += ''.join(secrets.choice(alphabet))
+    
+    passwordText.configure(text=pwd)
+"""
