@@ -20,3 +20,8 @@ You can edit a few settings, and then click `generate`. Then you have a securly 
 
 **Symbols**
 - Adds special symbols into password  
+
+## Packages Used
+**Custom Tkinter:** Used for the GUI  
+**Pyperclip:** Used to copy the password directly to clipboard  
+**Secrets:** Used to generate the password  
