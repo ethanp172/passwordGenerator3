@@ -4,7 +4,7 @@ import secrets
 import string
 
 root = CTk() #Tk
-root.geometry("700x400") # 250
+root.geometry("700x350") # 250, now 350
 root.title("Password Generator 3.0")
 
 ## FUNCTIONS ##
@@ -97,42 +97,22 @@ lenSlider.set(12)
 lenSlider.pack()
 
 # Checkboxes #
+blankSpace2 = CTkLabel(root, text="")
+blankSpace2.pack()
+
+
 check_var1 = StringVar(value="on")
 letterBox = CTkCheckBox(root, text="Add letters", command=checkbox_event1, variable=check_var1, onvalue="on", offvalue="off")
-letterBox.pack(pady=20)
+letterBox.pack(pady=5)
 
 check_var2 = StringVar(value="on")
 numberBox = CTkCheckBox(root, text="Add numbers", command=checkbox_event2, variable=check_var2, onvalue="on", offvalue="off")
-numberBox.pack(pady=20)
+numberBox.pack(pady=5)
 
 check_var3 = StringVar(value="on")
 charBox = CTkCheckBox(root, text="Add characters", command=checkbox_event3, variable=check_var3, onvalue="on", offvalue="off")
-charBox.pack(pady=20)
+charBox.pack(pady=5)
 
 
 ## Run GUI ##
 root.mainloop()
-
-#################
-##### NOTES #####
-#################
-
-"""
-roundedVal = 12
-def generatePassword():
-    letters = string.ascii_letters 
-    digits = string.digits
-    special_chars = string.punctuation
-
-    alphabet = letters + digits + special_chars
-
-    pwd_length = roundedVal
-
-    global pwd
-
-    pwd = ''
-    for i in range(pwd_length):
-        pwd += ''.join(secrets.choice(alphabet))
-    
-    passwordText.configure(text=pwd)
-"""
