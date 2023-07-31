@@ -10,13 +10,13 @@ You can edit a few settings, and then click `generate`. Then you have a securly 
 **Length**
 - How long your password will be
 - By defualt, the value will be 12
-- Min: 1, Max: 45
+- Min: 1, Max: 45  
 
 **Letters**
-- Adds letters into password
+- Adds letters into password  
 
 **Numbers**
-- Adds numbers into password
+- Adds numbers into password  
 
 **Symbols**
-- Adds special symbols into password
+- Adds special symbols into password  
