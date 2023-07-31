@@ -4,11 +4,17 @@ import secrets
 import string
 
 root = CTk() #Tk
-root.geometry("700x250")
+root.geometry("700x350") # 250
 root.title("Password Generator 3.0")
 
 ## FUNCTIONS ##
 roundedVal = 12
+global addLetters
+addLetters = "on"
+global addNumbers
+addNumbers = "on"
+global addChars
+addChars = "on"
 def generatePassword():
     letters = string.ascii_letters 
     digits = string.digits
@@ -26,6 +32,7 @@ def generatePassword():
     
     passwordText.configure(text=pwd)
 
+
 def lenSliderEvent(value):
     global roundedVal
     roundedVal = int(value)
@@ -38,8 +45,17 @@ def copyPaste():
     toCopy = pwd
     pyperclip.copy(pwd)
 
-def checkbox_event():
-    print("checkbox toggled, current value:", check_var.get())
+def checkbox_event1():
+    global addLetters
+    addLetters = check_var1.get()
+
+def checkbox_event2():
+    global addNumbers
+    addNumbers = check_var2.get()
+
+def checkbox_event3():
+    global addChars
+    addChars = check_var3.get()
 
 
 ## CODE ##
@@ -68,9 +84,17 @@ lenSlider.set(12)
 lenSlider.pack()
 
 # Checkboxes #
-check_var = StringVar(value="on")
-checkbox = CTkCheckBox(root, text="CTkCheckBox", command=checkbox_event, variable=check_var, onvalue="on", offvalue="off")
-checkbox.pack(pady=20)
+check_var1 = StringVar(value="on")
+letterBox = CTkCheckBox(root, text="Add letters", command=checkbox_event1, variable=check_var1, onvalue="on", offvalue="off")
+letterBox.pack(pady=20)
+
+check_var2 = StringVar(value="on")
+numberBox = CTkCheckBox(root, text="Add numbers", command=checkbox_event1, variable=check_var2, onvalue="on", offvalue="off")
+numberBox.pack(pady=20)
+
+check_var3 = StringVar(value="on")
+charBox = CTkCheckBox(root, text="Add characters", command=checkbox_event1, variable=check_var3, onvalue="on", offvalue="off")
+charBox.pack(pady=20)
 
 
 ## Run GUI ##
