@@ -70,7 +70,7 @@ lenSlider.pack()
 # Checkboxes #
 check_var = StringVar(value="on")
 checkbox = CTkCheckBox(root, text="CTkCheckBox", command=checkbox_event, variable=check_var, onvalue="on", offvalue="off")
-checkbox.grid(row=0, column=0, padx=20, pady=20)
+checkbox.pack(pady=20)
 
 
 ## Run GUI ##
