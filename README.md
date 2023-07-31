@@ -5,3 +5,18 @@ A simple password generator written in Python, using [Custom Tkinter](https://gi
 
 ## How it works
 You can edit a few settings, and then click `generate`. Then you have a securly generated password, that you can directly copy to your clipboard.
+
+## Settings
+**Length**
+- How long your password will be
+- By defualt, the value will be 12
+- Min: 1, Max: 45
+
+**Letters**
+- Adds letters into password
+
+**Numbers**
+- Adds numbers into password
+
+**Symbols**
+- Adds special symbols into password
