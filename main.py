@@ -110,7 +110,7 @@ numberBox = CTkCheckBox(root, text="Add numbers", command=checkbox_event2, varia
 numberBox.pack(pady=5)
 
 check_var3 = StringVar(value="on")
-charBox = CTkCheckBox(root, text="Add characters", command=checkbox_event3, variable=check_var3, onvalue="on", offvalue="off")
+charBox = CTkCheckBox(root, text="Add symbols", command=checkbox_event3, variable=check_var3, onvalue="on", offvalue="off")
 charBox.pack(pady=5)
 
 
