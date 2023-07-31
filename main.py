@@ -4,7 +4,7 @@ import secrets
 import string
 
 root = CTk() #Tk
-root.geometry("700x350") # 250
+root.geometry("700x400") # 250
 root.title("Password Generator 3.0")
 
 ## FUNCTIONS ##
@@ -19,18 +19,31 @@ def generatePassword():
     letters = string.ascii_letters 
     digits = string.digits
     special_chars = string.punctuation
+    #alphabet = letters + digits + special_chars
 
-    alphabet = letters + digits + special_chars
+    ### Toggles ###
+    alphabet = ""
+    if addLetters == "on":
+        alphabet = alphabet + letters
+    if addNumbers == "on":
+        alphabet = alphabet + digits
+    if addChars == "on":
+        alphabet = alphabet + special_chars
 
-    pwd_length = roundedVal
+    ### Errors ###
+    if (addLetters == "off") and (addNumbers == "off") and (addChars == "off"):
+        passwordText.configure(text="Can't create password with no input.", fg_color="red")
+    else:
+        # Everything below will be indented
+        pwd_length = roundedVal
 
-    global pwd
+        global pwd
 
-    pwd = ''
-    for i in range(pwd_length):
-        pwd += ''.join(secrets.choice(alphabet))
-    
-    passwordText.configure(text=pwd)
+        pwd = ''
+        for i in range(pwd_length):
+            pwd += ''.join(secrets.choice(alphabet))
+        
+        passwordText.configure(text=pwd, fg_color="#434756")
 
 
 def lenSliderEvent(value):
@@ -89,11 +102,11 @@ letterBox = CTkCheckBox(root, text="Add letters", command=checkbox_event1, varia
 letterBox.pack(pady=20)
 
 check_var2 = StringVar(value="on")
-numberBox = CTkCheckBox(root, text="Add numbers", command=checkbox_event1, variable=check_var2, onvalue="on", offvalue="off")
+numberBox = CTkCheckBox(root, text="Add numbers", command=checkbox_event2, variable=check_var2, onvalue="on", offvalue="off")
 numberBox.pack(pady=20)
 
 check_var3 = StringVar(value="on")
-charBox = CTkCheckBox(root, text="Add characters", command=checkbox_event1, variable=check_var3, onvalue="on", offvalue="off")
+charBox = CTkCheckBox(root, text="Add characters", command=checkbox_event3, variable=check_var3, onvalue="on", offvalue="off")
 charBox.pack(pady=20)
 
 
